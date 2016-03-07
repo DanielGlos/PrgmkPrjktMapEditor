@@ -14,8 +14,8 @@ import java.awt.Graphics2D;
 @SuppressWarnings("serial")
 public class TilePanel extends Panel{
 	
-	private static final String adresa = "/testtileset.gif";
-	private static final int scale = 2;
+	private static final String adresa = "/Tilesets.gif";
+	private static final int scale = 1;
 	
 	public TilePanel() {
 		super();
@@ -121,7 +121,7 @@ public class TilePanel extends Panel{
 				row++;
 			}
 			blocks[i] = new Blok(tiles[0][i]);
-			blocks[i].setPosition(col * tileSize * 2,row * tileSize * 2);
+			blocks[i].setPosition(col * tileSize * scale,row * tileSize * scale);
 			blocks[i + width] = new Blok(tiles[1][i]);
 			blocks[i + width].setPosition(col * tileSize * scale, row * tileSize * scale + 300);
 			col++;

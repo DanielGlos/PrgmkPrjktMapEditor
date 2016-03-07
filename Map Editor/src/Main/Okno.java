@@ -23,6 +23,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 import Panely.MapPanel;
 import Panely.TilePanel;
@@ -96,8 +98,8 @@ public class Okno extends JFrame{
 					BufferedWriter bw = new BufferedWriter(new FileWriter(String.format("Resources/" + name + ".map")));
 					bw.write(mapPanel.getMapWidth() + "\n");
 					bw.write(mapPanel.getMapHeight() + "\n");
-					for(int row = 0; row < mapPanel.getMapWidth(); row++) {
-						for(int col = 0; col < mapPanel.getMapHeight(); col++) {
+					for(int row = 0; row < mapPanel.getMapHeight(); row++) {
+						for(int col = 0; col < mapPanel.getMapWidth(); col++) {
 							bw.write(mapPanel.getMap()[row][col] + " ");
 						}
 						bw.write("\n");
@@ -178,8 +180,6 @@ public class Okno extends JFrame{
 		minusHeight = new JButton("-");
 		mapWidth = new JTextField(3);
 		mapHeight = new JTextField(3);
-		
-		
 		
 		
 		

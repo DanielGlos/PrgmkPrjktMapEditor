@@ -152,8 +152,8 @@ public class MapPanel extends Panel implements KeyListener{
 	
 	
 	public void clearMap() {
-		for(int i=0;i<mapWidth;i++) {
-			for(int j=0;j<mapHeight;j++) {
+		for(int i=0;i<mapHeight;i++) {
+			for(int j=0;j<mapWidth;j++) {
 				map[i][j] = 8;
 			}
 		}
@@ -272,7 +272,9 @@ public class MapPanel extends Panel implements KeyListener{
 		}else if(SwingUtilities.isLeftMouseButton(me)) {
 			x = me.getX() - xMap;
 			y = me.getY() - yMap;
-			map[y / tileSize][x / tileSize] = currBlock;
+			if(x > 0 && x < mapWidth * tileSize &&
+					y > 0 && y < mapHeight * tileSize)
+				map[y / tileSize][x / tileSize] = currBlock;
 		}
 	}
 

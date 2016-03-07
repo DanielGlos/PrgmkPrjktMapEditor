@@ -20,7 +20,7 @@ public abstract class Panel extends JPanel implements Runnable, MouseListener, M
 	protected int WIDTH;
 	protected int HEIGHT;
 	
-	protected static final int tileSize = 30;
+	protected static final int tileSize = 60;
 	protected static final int numRowsTiles = 2;;
 	
 	
